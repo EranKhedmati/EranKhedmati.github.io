@@ -1,12 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>زمین شناسی یازدهم</title>
+    <link rel="stylesheet" href="publid/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <h1>Hello World</h1>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+        <defs>
+            <linearGradient id="bg">
+                <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
+                <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
+            </linearGradient>
+            <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+	s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+        </defs>
+        <g>
+            <use xlink:href='#wave' opacity=".3">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
+                    calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacity=".6">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
+                    calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacty=".9">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
+                    calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+        </g>
+    </svg>
+
+    <div class="container">
+        <div class="content">
+
+            <section id="kepler-content" class="kepler">
+                <h1>قانون سوم کپلر</h1>
+                <div>
+                    <form id="kepler-form">
+                        <div class="input-item">
+                            <label for="">زمان گردش سیاره به دور خورشید (سال)</label>
+                            <input type="number" id="kepler-time" class="input-box">
+                        </div>
+                        <div class="input-item">
+                            <label for="kepler-distance">فاصله سیاره از دور خورشید (واحد نجومی)</label>
+                            <input type="number" id="kepler-distance" class="input-box">
+                        </div>
+                    </form>
+                    <div class="info-alert">
+                        یکی از مقادیر را وارد کنید تا متغیر بعدی پر شود<i class="fas fas far fa-question-circle"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section id="age-content" class="age">
+                <h1>سن نمونه</h1>
+                <div id="age-box">
+                    <from id="age-from">
+                        <div class="input-item">
+                            <label for="age-left">کسر مقدار باقی مانده</label>
+                            <input type="number" required id="age-left" class="input-box">
+                        </div>
+                        <div class="input-item">
+                            <label for="age-times">نیمه عمر</label>
+                            <input type="number" required id="age-times" class="input-box">
+                        </div>
+                        <button class="form-sub-btn" id="age-btn" type="submit">محاسبه سن نمونه</button>
+                    </from>
+                    <div class="result" id="age-result">سن نمونه :‌ 0</div>
+                </div>
+            </section>
+
+            <section id="takhal-content" class="takhal">
+                <h1>درصد تخلخل</h1>
+                <div id="takhal-box">
+                    <from id="takhal-from">
+                        <div class="input-item">
+                            <label for="takhal-empty">(m<sup>3</sup>) حجم فضاهای خالی</label>
+                            <input type="number" required id="takhal-empty" class="input-box">
+                        </div>
+                        <div class="input-item">
+                            <label for="takhal-all">(m<sup>3</sup>) حجم کل فضا</label>
+                            <input type="number" required id="takhal-all" class="input-box">
+                        </div>
+                        <button class="form-sub-btn" id="takhal-btn" type="submit">محاسبه ی تخلخل</button>
+                    </from>
+                    <div class="result" id="takhal-result">درصد تخلخل:‌ 0</div>
+                </div>
+            </section>
+
+            <section id="dabi-content" class="dabi">
+                <h1>دبی</h1>
+                <div id="dabi-box">
+                    <from id="dabi-from">
+                        <div class="input-item">
+                            <label for="dabi-area">(m<sup>2</sup>) مساحت سطح مقطع جریان آب</label>
+                            <input type="number" required id="dabi-area" class="input-box">
+                        </div>
+                        <div class="input-item">
+                            <label for="dabi-speed">(m/s) سرعت جریان آب</label>
+                            <input type="number" required id="dabi-speed" class="input-box">
+                        </div>
+                        <button class="form-sub-btn" id="dabi-btn" type="submit">محاسبه ی تخلخل</button>
+                    </from>
+                    <div class="result" id="dabi-result">دبی: 0</div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="panel">
+            <div class="toggle-btn"></div>
+            <ul>
+                <a href="#kepler-content" class="panel-btn active">
+                    <i class="fas fa-earth-america"></i>
+                    <span>قانون سوم کپلر</span>
+                </a>
+                <a href="#age-content" class="panel-btn">
+                    <i class="fa-brands fa-pagelines"></i>
+                    <span>سن نمونه</span>
+                </a>
+                <a href="#takhal-content" class="panel-btn">
+                    <i class="fa-solid fa-hill-rockslide"></i>
+                    <span>تخلخل</span>
+                </a>
+                <a href="#dabi-content" class="panel-btn">
+                    <i class="fas fa-water"></i>
+                    <span>دبی</span>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="publid/script.js"></script>
 </body>
+
 </html>

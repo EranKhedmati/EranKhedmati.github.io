@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "Vazir";
+    src: url("src/vazir-font-v16.1.0/Vazir.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 200ms;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Vazir";
+}
+
+/* Container */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+}
+
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #0e4166;
+    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+    z-index: -1;
+}
+
+/* Panel */
+
+.panel {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    right: -150px;
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.toggle-btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background: #8FE3CF;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 11;
+    opacity: 0.7;
+}
+
+.toggle-btn::before {
+    content: '';
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background: #002B5B;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.panel>ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    z-index: 10;
+}
+
+.panel>ul>a {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: #002B5B;
+}
+
+.panel>ul>a:hover {
+    background: rgba(256, 256, 256, 0.2);
+}
+
+.panel>ul .active {
+    background: rgba(256, 256, 256, 0.4);
+}
+
+.panel>ul>a>i {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*  Content */
+.content {
+    width: 100%;
+    height: 100%;
+    text-align: end;
+    padding-right: 50px;
+}
+
+.content>section {
+    width: 100%;
+    height: 100vh;
+}
+
+/* pages ------------------------------------------ */
+
+.content>section>h1 {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.content>section>div {
+    margin: 70px auto auto auto;
+    max-width: 500px;
+}
+
+.input-item {
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 17px;
+    direction: rtl;
+    border: #002B5B 4px solid;
+    background: rgba(256, 256, 256, 0.6);
+    outline: none;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.input-box:focus {
+    background: #fff;
+    border-radius: 8px;
+    outline: 4px solid #8FE3CF;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.info-alert {
+    width: 100%;
+    background: #f0ad4e;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+
+.info-alert>i {
+    margin: 0 5px;
+}
+
+.form-sub-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background: #002B5B;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Vazir";
+    transition: outline 100ms;
+}
+
+.form-sub-btn:hover {
+    outline: 2px solid #8FE3CF;
+}
+
+.result {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    outline: #fff 2px solid;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Media query */
+@media (max-width: 600px) {
+    .content>section>div {
+        margin: 30px auto auto auto;
+    }
+
+    .content>section>div {
+        padding: 20px;
+    }
+
+    .content {
+        padding-right: 0;
+    }
+}
